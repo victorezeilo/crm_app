@@ -1,0 +1,9 @@
+# Ignore Python virtual environment
+crm_venv/
+
+# Ignore Python bytecode files
+*.pyc
+
+# Ignore database files
+*.db
+*.sqlite3
