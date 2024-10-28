@@ -5,54 +5,92 @@ This repository contains the source code for a Customer Relationship Management 
 ## Features
 
 - **User Authentication**: Secure authentication system for users to log in and manage their accounts.
-- **Customer Management**: Allows users to create, update, and delete customer records, including contact information, notes, and interaction history.
-- **Task Management**: Enables users to create tasks, assign them to team members, set due dates, and track their progress.
-- **Sales Pipeline**: Provides a visual representation of the sales pipeline, allowing users to track deals through various stages.
-- **Reporting and Analytics**: Generates reports and provides insights into sales performance, customer interactions, and team productivity.
+- **Customer Management**: Allows users to create, update, and delete customer records.
 
 ## Installation
 
 To run the CRM application locally, follow these steps:
 
-1. Clone this repository to your local machine:
+1. **Clone this repository** to your local machine:
 
    ```bash
    git clone <repository_url>
    ```
 
-2. Navigate to the project directory:
+2. **Navigate to the project directory**:
 
    ```bash
    cd crm_app
    ```
 
-3. Install the required dependencies using pip:
+3. **Set up the virtual environment**:
+
+   ```bash
+   python3 -m venv crm_venv
+   ```
+
+4. **Activate the virtual environment**:
+
+   ```bash
+   source crm_venv/bin/activate
+   ```
+
+5. **Install required dependencies** (if a `requirements.txt` file exists):
 
    ```bash
    pip install -r requirements.txt
    ```
 
-4. Apply the database migrations:
+   > **Note:** If you don’t have `requirements.txt`, you can create it by running:
+   > ```bash
+   > pip freeze > requirements.txt
+   > ```
+
+6. **Apply the database migrations**:
 
    ```bash
    python manage.py migrate
    ```
 
-5. Start the development server:
+7. **Start the development server**:
 
    ```bash
    python manage.py runserver
    ```
 
-6. Access the CRM application in your web browser at `http://localhost:8000`.
+8. **Access the CRM application** in your web browser at `http://localhost:8000`.
+
+---
+
+## Usage with Makefile Commands
+
+To streamline common project tasks, you can use the provided `Makefile` commands:
+
+- **Set up the environment and install dependencies**:
+  ```bash
+  make setup
+  ```
+
+- **Run the development server**:
+  ```bash
+  make runserver
+  ```
+
+- **Lint your code**:
+  ```bash
+  make lint
+  ```
+
+- **Clean up cache files**:
+  ```bash
+  make clean
+  ```
+
 
 ## Usage
 
 1. **User Registration/Login**: Create a new account or log in with existing credentials.
-2. **Customer Management**: Add new customers, update their information, and keep track of interactions.
-3. **Task Management**: Create tasks, assign them to team members, and monitor their progress.
-4. **Sales Pipeline**: Visualize the sales pipeline and track deals through different stages.
-5. **Reports and Analytics**: Generate reports to gain insights into sales performance and customer behavior.
+2. **Customer Management**: Add new customers, update their information.
 
 ## Contributing
 
