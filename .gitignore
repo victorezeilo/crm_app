@@ -7,3 +7,13 @@ crm_venv/
 # Ignore database files
 *.db
 *.sqlite3
+
+
+# Ignore compiled files
+__pycache__/
+
+# Ignore sensitive configuration files
+.env
+
+# Ignore Django migration files if not shared
+*/migrations/
