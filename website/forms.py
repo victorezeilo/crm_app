@@ -136,8 +136,7 @@ class AddCustomer(forms.ModelForm):
         required=True,
         widget=forms.widgets.TextInput(
             attrs={
-                "placeholder": "Postal Code",
-                "class": "form-control"
+                "placeholder": "Postal Code", "class": "form-control"
             }
         ),
         label=""

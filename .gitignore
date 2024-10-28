@@ -17,3 +17,6 @@ __pycache__/
 
 # Ignore Django migration files if not shared
 */migrations/
+
+# Flake8 configuration
+.flake8

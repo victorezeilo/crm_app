@@ -3,9 +3,9 @@ from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
 from .forms import SignUpForm, AddCustomer
 from .models import CustomerRecord
-# Create your views here.
 
 
+# home view
 def home(request):
     customer_records = CustomerRecord.objects.all()
 
@@ -28,12 +28,14 @@ def home(request):
             request, 'home.html', {'customer_records': customer_records})
 
 
+# logout user
 def logout_user(request):
     logout(request)
     messages.success(request, 'You have been logged out')
     return redirect('home')
 
 
+# register user
 def register_user(request):
     if request.method == 'POST':
         form = SignUpForm(request.POST)
@@ -53,6 +55,7 @@ def register_user(request):
     return render(request, 'register.html', {'form': form})
 
 
+# customer record
 def customer_record(request, pk):
     if request.user.is_authenticated:
         customer_by_id = CustomerRecord.objects.get(id=pk)
@@ -63,6 +66,7 @@ def customer_record(request, pk):
         return redirect('home')
 
 
+# delete user
 def delete_customer(request, pk):
     if request.user.is_authenticated:
         customer_by_id = CustomerRecord.objects.get(id=pk)
@@ -74,6 +78,7 @@ def delete_customer(request, pk):
         return redirect('home')
 
 
+# add customer
 def add_customer(request):
     form = AddCustomer(request.POST or None)
     if request.user.is_authenticated:
@@ -89,6 +94,7 @@ def add_customer(request):
         return redirect('home')
 
 
+# update customer
 def update_customer(request, pk):
     if request.user.is_authenticated:
         current_customer = CustomerRecord.objects.get(id=pk)

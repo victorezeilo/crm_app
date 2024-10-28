@@ -4,9 +4,6 @@ PYTHON := $(VENV_DIR)/bin/python
 PIP := $(VENV_DIR)/bin/pip
 DJANGO_MANAGE := $(PYTHON) manage.py
 
-# Default goal
-.DEFAULT_GOAL := help
-
 ## Install dependencies and set up virtual environment
 setup: $(VENV_DIR) requirements.txt
 	$(PIP) install -r requirements.txt

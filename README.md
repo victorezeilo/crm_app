@@ -86,7 +86,6 @@ To streamline common project tasks, you can use the provided `Makefile` commands
   make clean
   ```
 
-
 ## Usage
 
 1. **User Registration/Login**: Create a new account or log in with existing credentials.
