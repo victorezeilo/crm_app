@@ -5,7 +5,7 @@ crm_venv/
 *.pyc
 
 # Ignore database files
-db.py
+*.db
 *.sqlite3
 
 
